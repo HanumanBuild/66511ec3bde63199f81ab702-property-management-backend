@@ -23,6 +23,36 @@ app.get('/', (req, res) => {
   res.send('Property Management Backend');
 });
 
+const companyInfo = {
+  name: "Property Management Company",
+  description: "We offer comprehensive property management services to ensure your properties are well-maintained and profitable.",
+  serviceAvailability: "24/7"
+};
+
+const services = [
+  { id: 1, name: "Property Maintenance" },
+  { id: 2, name: "Tenant Management" },
+  { id: 3, name: "Rent Collection" },
+  { id: 4, name: "Financial Reporting" }
+];
+
+const testimonials = [
+  { id: 1, name: "John Doe", feedback: "This company has been a lifesaver for managing my properties!" },
+  { id: 2, name: "Jane Smith", feedback: "Excellent service and support. Highly recommend!" }
+];
+
+app.get('/api/company-info', (req, res) => {
+  res.json(companyInfo);
+});
+
+app.get('/api/services', (req, res) => {
+  res.json(services);
+});
+
+app.get('/api/testimonials', (req, res) => {
+  res.json(testimonials);
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
