@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI;
 const MONGODB_DBNAME = process.env.MONGODB_DBNAME;
 
-app.use(cors());
+app.use(cors()); // Add this line to enable CORS for all origins
 app.use(express.json());
 
 mongoose.connect(`${MONGODB_URI}/${MONGODB_DBNAME}`, {
